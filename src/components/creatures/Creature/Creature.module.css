@@ -2,7 +2,6 @@
     display: flex;
     width: 220px;
     position: relative;
-    flex-shrink: 1;
 }
 
 .card img {

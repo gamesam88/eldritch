@@ -16,7 +16,6 @@ const Deck = (props) => {
         if (deck.length) {
             let x = deck.pop()
             setCard(x.cardFace)
-            console.log(x)
         }
     }
 

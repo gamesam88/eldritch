@@ -5,6 +5,7 @@ const Creature = (props) => {
     return (
         <div className={styles.card} onClick={() => {
             props.godHandler(props.id)
+            props.nameHandler(props.id)
         }}>
             <img src={props.ancientFace} alt="ancient" />
             <span>{props.id}</span>

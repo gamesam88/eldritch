@@ -5,7 +5,7 @@ const Counter = (props) => {
 
     return (
         <div className={styles.container}>
-            {'Hello'}
+            'SOON'
         </div>
     );
 }
