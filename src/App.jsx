@@ -8,7 +8,7 @@ import { setShem, addRandom, createPull } from './helpers/functions'
 
 function App() {
 
-  const [god, setGod] = useState(ancients[0]);
+  const [god, setGod] = useState();
   const [stack, setStack] = useState();
   const [dif, difSet] = useState('normal');
 
@@ -20,6 +20,14 @@ function App() {
     })
   }
 
+  // const stagesHandler = (newStage) => {
+  //   setStages(newStage)
+  // }
+
+  // useEffect(() => {
+  //   stagesHandler
+  // }, [stages]);
+
   const difHendler = (difficalt) => {
     difSet(difficalt)
   }
@@ -30,21 +38,18 @@ function App() {
       const firstSet = createPull(dif)
       const secondSet = createPull(dif)
       const thirdSet = createPull(dif)
-      const newStack = addRandom(newShema.third, thirdSet).concat(addRandom(newShema.second, secondSet)).concat(addRandom(newShema.first, firstSet))
+      const newStack = {
+        first: addRandom(newShema.first, firstSet),
+        second: addRandom(newShema.second, secondSet),
+        third: addRandom(newShema.third, thirdSet)
+      }
       setStack(newStack)
     }
-    difSet(dif)
   }, [god, dif]);
-
-  useEffect(() => {
-    console.log(createPull(dif))
-  }, [dif]);
-
-
 
   return (
     <div className="App">
-      <Creatures godHandler={godHandler} />
+      <Creatures godHandler={godHandler} god={god} />
       <Difficult difHendler={difHendler} dif={dif} />
       <PlayingBoard stack={stack} god={god} />
     </div>

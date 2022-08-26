@@ -2,6 +2,7 @@
     display: flex;
     width: 220px;
     position: relative;
+
 }
 
 .card img {
@@ -9,15 +10,18 @@
     height: 100%;
 }
 
-.card:hover {
-    opacity: 1;
-    filter: sepia();
+.notActive {
+
+    filter: sepia(1);
 }
 
-.card span {
-    position: absolute;
-    top: 0;
-    left: 30%;
-    text-align: center;
-    color: red;
+.card img:hover {
+    filter: sepia(0);
+}
+
+.active {
+    border-color: blueviolet;
+    border-style: solid;
+    border-width: 2px;
+    filter: sepia(0);
 }

@@ -12,25 +12,11 @@
     width: 100px;
     height: 30px;
     font-weight: 700;
-    color: aquamarine;
-    border-color: aquamarine;
     opacity: 0.7;
 }
 
 .container button:hover {
     opacity: 1;
-}
-
-.container button:nth-child(1) {
-    background-color: green;
-}
-
-.container button:nth-child(2) {
-    background-color: brown;
-}
-
-.container button:nth-child(3) {
-    background-color: blue;
 }
 
 .diff {

@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  min-width: 480px;
+  min-width: 1100px;
   min-height: 100vh;
 }
 

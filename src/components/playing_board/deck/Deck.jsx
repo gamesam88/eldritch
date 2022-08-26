@@ -8,14 +8,20 @@ const Deck = (props) => {
     const [card, setCard] = useState();
 
     useEffect(() => {
-        setDeck(props.stack)
-        setCard()
-    }, [props.stack, props.god]);
+        if (props.stack) {
+            const stack = props.stack.third.concat(props.stack.second).concat(props.stack.first)
+            setDeck(stack)
+            setCard()
+        }
+    }, [props.stack]);
 
     const handler = () => {
         if (deck.length) {
             let x = deck.pop()
             setCard(x.cardFace)
+            console.log(x.color)
+            console.log(props.stack)
+
         }
     }
 

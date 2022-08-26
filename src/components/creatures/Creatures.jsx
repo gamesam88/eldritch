@@ -4,7 +4,7 @@ import ancients from '../../data/ancients.js';
 import { useState } from 'react';
 
 const Creatures = (props) => {
-    const [name, setName] = useState('choose');
+    const [name, setName] = useState('Select creature');
 
     const nameHandler = (name) => {
         setName(name)
@@ -15,7 +15,7 @@ const Creatures = (props) => {
             <div className={styles.godName}>{name}</div>
             {ancients.map((elem) => {
                 return (
-                    <Creature ancientFace={elem.cardFace} key={elem.id} id={elem.id} godHandler={props.godHandler} nameHandler={nameHandler} />
+                    <Creature god={props.god} ancientFace={elem.cardFace} key={elem.id} id={elem.id} godHandler={props.godHandler} nameHandler={nameHandler} />
                 )
             }
             )}
