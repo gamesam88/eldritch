@@ -14,7 +14,6 @@ const Counter = (props) => {
 
     useEffect(() => {
         if (props.stack) {
-            console.log(props.stack)
             setFirst(props.stack.first)
             setSecond(props.stack.second)
             setThird(props.stack.third)
@@ -24,9 +23,12 @@ const Counter = (props) => {
 
     return (
         <div className={styles.container}>
-            <Stage god={props.god} stage={first} />
-            <Stage god={props.god} stage={second} />
-            <Stage god={props.god} stage={third} />
+            <p>Первая стадия</p>
+            <Stage stage={first} stack={props.stack} />
+            <p>Вторая стадия</p>
+            <Stage stage={second} stack={props.stack} />
+            <p>Третья стадия</p>
+            <Stage stage={third} stack={props.stack} />
         </div>
     );
 }

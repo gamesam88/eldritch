@@ -8,20 +8,23 @@ const Stage = (props) => {
 
     useEffect(() => {
         if (props.stage) {
-            console.log('stage', props.stage)
+            console.log(props.stage)
             let s1 = 0
             let s2 = 0
             let s3 = 0
             props.stage.forEach(element => {
-                if (element.color === 'green') {
-                    s1 += 1
-                } else
-                    if (element.color === 'brown') {
-                        s2 += 1
+                if (element) {
+                    if (element.color === 'green') {
+                        s1 += 1
                     } else
-                        if (element.color === 'blue') {
-                            s3 += 1
-                        }
+                        if (element.color === 'brown') {
+                            s2 += 1
+                        } else
+                            if (element.color === 'blue') {
+                                s3 += 1
+                            }
+                }
+
             });
             setGreen(s1)
             setBrown(s2)

@@ -12,7 +12,7 @@ const Creatures = (props) => {
 
     return (
         <div className={styles.container} >
-            <div className={styles.godName}>{name}</div>
+            <div className={styles.godName}><b>Создание:</b> {name}</div>
             {ancients.map((elem) => {
                 return (
                     <Creature god={props.god} ancientFace={elem.cardFace} key={elem.id} id={elem.id} godHandler={props.godHandler} nameHandler={nameHandler} />

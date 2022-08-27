@@ -5,13 +5,12 @@ import DifficultyButton from './button/DifficultyButton'
 const Difficult = (props) => {
 
     return (<div className={styles.container}>
-        <div className={styles.diff}>{props.dif}</div>
+        <div className={styles.diff}><b>Сложность:</b> {props.dif}</div>
         <>{difficulties.map((element) => {
             return (
                 <DifficultyButton key={element.id} difHendler={props.difHendler} dificult={element} />
             )
         })}
-
         </>
     </div>);
 }

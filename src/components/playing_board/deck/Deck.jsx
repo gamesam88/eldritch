@@ -17,11 +17,10 @@ const Deck = (props) => {
 
     const handler = () => {
         if (deck.length) {
+            console.log(deck)
             let x = deck.pop()
             setCard(x.cardFace)
-            console.log(x.color)
-            console.log(props.stack)
-
+            props.stagesHandler(x.id)
         }
     }
 
