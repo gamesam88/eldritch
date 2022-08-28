@@ -10,8 +10,6 @@ const Counter = (props) => {
     const [second, setSecond] = useState(init);
     const [third, setThird] = useState(init);
 
-
-
     useEffect(() => {
         if (props.stack) {
             setFirst(props.stack.first)

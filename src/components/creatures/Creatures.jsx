@@ -1,21 +1,14 @@
 import styles from './Creatures.module.css'
 import Creature from "./Creature/Creature";
 import ancients from '../../data/ancients.js';
-import { useState } from 'react';
 
 const Creatures = (props) => {
-    const [name, setName] = useState('Select creature');
-
-    const nameHandler = (name) => {
-        setName(name)
-    }
 
     return (
         <div className={styles.container} >
-            <div className={styles.godName}><b>Создание:</b> {name}</div>
             {ancients.map((elem) => {
                 return (
-                    <Creature god={props.god} ancientFace={elem.cardFace} key={elem.id} id={elem.id} godHandler={props.godHandler} nameHandler={nameHandler} />
+                    <Creature god={props.god} ancientFace={elem.cardFace} key={elem.id} id={elem.id} godHandler={props.godHandler} />
                 )
             }
             )}

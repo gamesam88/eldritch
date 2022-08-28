@@ -17,7 +17,6 @@ const Deck = (props) => {
 
     const handler = () => {
         if (deck.length) {
-            console.log(deck)
             let x = deck.pop()
             setCard(x.cardFace)
             props.stagesHandler(x.id)

@@ -96,7 +96,7 @@ function App() {
   return (
     <div className="App">
       <Creatures godHandler={godHandler} god={god} />
-      <Difficult difHendler={difHendler} dif={dif} />
+      <Difficult difHendler={difHendler} dif={dif} god={god} />
       <PlayingBoard stack={stack} god={god} />
     </div>
   );

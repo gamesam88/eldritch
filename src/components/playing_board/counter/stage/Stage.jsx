@@ -8,7 +8,6 @@ const Stage = (props) => {
 
     useEffect(() => {
         if (props.stage) {
-            console.log(props.stage)
             let s1 = 0
             let s2 = 0
             let s3 = 0
@@ -24,7 +23,6 @@ const Stage = (props) => {
                                 s3 += 1
                             }
                 }
-
             });
             setGreen(s1)
             setBrown(s2)
@@ -32,7 +30,6 @@ const Stage = (props) => {
         }
 
     }, [props.stage]);
-
 
     return (
         <div className={styles.container}>

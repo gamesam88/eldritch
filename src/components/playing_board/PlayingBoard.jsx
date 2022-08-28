@@ -13,7 +13,6 @@ const PlayingBoard = (props) => {
     const stagesHandler = (id) => {
         let newStack = JSON.stringify(tempStack)
         let parseStack = JSON.parse(newStack)
-        console.log(id)
         for (let arr in parseStack) {
             for (let i = 0; i < parseStack[arr].length; i++) {
                 if (parseStack[arr][i]) {
@@ -21,13 +20,10 @@ const PlayingBoard = (props) => {
                         delete parseStack[arr][i]
                     }
                 }
-
             }
         }
         setTempStack(parseStack)
-        console.log(parseStack)
     }
-
 
     return (<div className={styles.container} >
         <Counter stack={tempStack} />
