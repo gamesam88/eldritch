@@ -8,13 +8,38 @@ import { setShem, createPull, getRandomNum } from './helpers/functions'
 
 function App() {
 
-  const [god, setGod] = useState();
+  const godInit = {
+    id: 'init',
+    name: 'Select ancient',
+    cardFace: '',
+    firstStage: {
+      greenCards: 0,
+      blueCards: 0,
+      brownCards: 0,
+    },
+    secondStage: {
+      greenCards: 0,
+      blueCards: 0,
+      brownCards: 0,
+    },
+    thirdStage: {
+      greenCards: 0,
+      blueCards: 0,
+      brownCards: 0,
+    }
+  }
+
+  const [god, setGod] = useState(godInit);
   const [stack, setStack] = useState();
   const [dif, difSet] = useState('normal');
 
   const [greenPull, setGreenPull] = useState(new Set([]));
   const [brownPull, setBrownPull] = useState(new Set([]));
   const [bluePull, setBluePull] = useState(new Set([]));
+
+  const reset = () => {
+    setGod(godInit)
+  }
 
   useEffect(() => {
     someHendle()
@@ -96,7 +121,7 @@ function App() {
   return (
     <div className="App">
       <Creatures godHandler={godHandler} god={god} />
-      <Difficult difHendler={difHendler} dif={dif} god={god} />
+      <Difficult difHendler={difHendler} dif={dif} god={god} reset={reset} />
       <PlayingBoard stack={stack} god={god} />
     </div>
   );

@@ -15,12 +15,13 @@ const Difficult = (props) => {
     return (<div className={styles.container}>
         <div className={styles.godName}><b>Древний:</b> {name}</div>
         <div className={styles.diff}><b>Сложность:</b> {props.dif}</div>
-        <>{difficulties.map((element) => {
+        <div className={styles.buttons}>{difficulties.map((element) => {
             return (
                 <DifficultyButton key={element.id} difHendler={props.difHendler} dificult={element} />
             )
         })}
-        </>
+        </div>
+        <button className={styles.reset} onClick={() => { props.reset() }}>Сброс</button>
     </div>);
 }
 
