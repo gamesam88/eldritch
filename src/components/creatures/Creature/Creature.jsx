@@ -7,7 +7,7 @@ const Creature = (props) => {
 
     useEffect(() => {
         if (props.god) {
-            if (props.id == props.god.id) {
+            if (props.id === props.god.id) {
                 setActive(true)
             } else {
                 setActive(false)

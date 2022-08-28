@@ -13,50 +13,18 @@ export function getRandomNum(num) {
     return Math.floor(Math.random() * num);
 }
 
-// let greenPull = new Set([])
-// let brownPull = new Set([])
-// let bluePull = new Set([])
+export const helperForPull = (god) => {
+    if (god) {
+        let amountColors = {
+            amountGreen: god.firstStage.greenCards + god.secondStage.greenCards + god.thirdStage.greenCards,
+            amountBrown: god.firstStage.brownCards + god.secondStage.brownCards + god.thirdStage.brownCards,
+            amountBlue: god.firstStage.blueCards + god.secondStage.blueCards + god.thirdStage.blueCards
+        }
+        return amountColors
+    }
+}
 
-// export const addRandom = (shema, pull) => {
-//     let green = []
-//     let brown = []
-//     let blue = []
-
-//     while (green.length !== shema.greenCards) {
-//         let randNum = getRandomNum(pull.greenCards.length)
-//         if (!greenPull.has(pull.greenCards[randNum])) {
-//             greenPull.add(pull.greenCards[randNum])
-//             green.push(pull.greenCards[randNum])
-//         }
-//     }
-
-//     while (brown.length !== shema.brownCards) {
-//         let randNum = getRandomNum(pull.brownCards.length)
-//         if (!brownPull.has(pull.brownCards[randNum])) {
-//             brownPull.add(pull.brownCards[randNum])
-//             brown.push(pull.brownCards[randNum])
-//         }
-//     }
-
-//     while (blue.length !== shema.blueCards) {
-//         let randNum = getRandomNum(pull.blueCards.length)
-//         if (!bluePull.has(pull.blueCards[randNum])) {
-//             bluePull.add(pull.blueCards[randNum])
-//             blue.push(pull.blueCards[randNum])
-//         }
-//     }
-
-//     let sum = [...green, ...brown, ...blue]
-//     let result = []
-
-//     while (sum.length > 0) {
-//         let chunk = sum.splice(getRandomNum(sum.length), 1)
-//         result.push(...chunk)
-//     }
-//     return result
-// }
-
-export const createPull = (key) => {
+export const createPull = (key, amountColors) => {
     let greenPull = new Set()
     let brownPull = new Set()
     let bluePull = new Set()
@@ -115,11 +83,77 @@ export const createPull = (key) => {
                 }
             }
             break;
+
+        case 'veryhard':
+            for (let item of greenCards) {
+                if (item.difficulty === 'hard') {
+                    greenPull.add(item)
+                }
+            }
+
+            for (let item of brownCards) {
+                if (item.difficulty === 'hard') {
+                    brownPull.add(item)
+                }
+            }
+            for (let item of blueCards) {
+                if (item.difficulty === 'hard') {
+                    bluePull.add(item)
+                }
+            }
+
+            while (greenPull.size < amountColors.amountGreen) {
+                let someCard = greenCards[getRandomNum(greenCards.length)]
+                if (someCard.difficulty === 'normal' && !greenPull.has(someCard)) {
+                    greenPull.add(someCard)
+                }
+            }
+
+            while (brownPull.size < amountColors.amountBrown) {
+                let someCard = brownCards[getRandomNum(brownCards.length)]
+                if (someCard.difficulty === 'normal' && !brownPull.has(someCard)) {
+                    brownPull.add(someCard)
+                }
+            }
+            break;
+
+        case 'veryeasy':
+            for (let item of greenCards) {
+                if (item.difficulty === 'easy') {
+                    greenPull.add(item)
+                }
+            }
+
+            for (let item of brownCards) {
+                if (item.difficulty === 'easy') {
+                    brownPull.add(item)
+                }
+            }
+            for (let item of blueCards) {
+                if (item.difficulty === 'easy') {
+                    bluePull.add(item)
+                }
+            }
+
+            while (greenPull.size < amountColors.amountGreen) {
+                let someCard = greenCards[getRandomNum(greenCards.length)]
+                if (someCard.difficulty === 'normal' && !greenPull.has(someCard)) {
+                    greenPull.add(someCard)
+                }
+            }
+
+            while (brownPull.size < amountColors.amountBrown) {
+                let someCard = brownCards[getRandomNum(brownCards.length)]
+                if (someCard.difficulty === 'normal' && !brownPull.has(someCard)) {
+                    brownPull.add(someCard)
+                }
+            }
+            break;
+
         default:
             console.log('Wrong data!')
             break;
     }
-
 
     return {
         greenCards: Array.from(greenPull),

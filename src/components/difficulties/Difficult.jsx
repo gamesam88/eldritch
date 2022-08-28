@@ -17,7 +17,7 @@ const Difficult = (props) => {
         <div className={styles.diff}><b>Сложность:</b> {props.dif}</div>
         <div className={styles.buttons}>{difficulties.map((element) => {
             return (
-                <DifficultyButton key={element.id} difHendler={props.difHendler} dificult={element} />
+                <DifficultyButton key={element.id} difHendler={props.difHendler} dificult={element} dif={props.dif} />
             )
         })}
         </div>

@@ -1,9 +1,23 @@
 import styles from './DifficultyButton.module.css'
+import difficulties from '../../../data/difficulties';
+import { useEffect, useState } from 'react';
 
 const Difficult = (props) => {
 
+    const [active, setActive] = useState(false);
+
+    useEffect(() => {
+        if (props.dif) {
+            if (props.dif === props.dificult.id) {
+                setActive(true)
+            } else {
+                setActive(false)
+            }
+        }
+    }, [props.dif]);
+
     return (
-        <button onClick={() => {
+        <button className={active ? styles.active : styles.notActive} onClick={() => {
             props.difHendler(props.dificult.id)
         }
         }>

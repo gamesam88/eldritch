@@ -4,7 +4,7 @@ import Difficult from './components/difficulties/Difficult';
 import PlayingBoard from './components/playing_board/PlayingBoard';
 import { useEffect, useState } from 'react';
 import ancients from './data/ancients';
-import { setShem, createPull, getRandomNum } from './helpers/functions'
+import { setShem, createPull, getRandomNum, helperForPull } from './helpers/functions'
 
 function App() {
 
@@ -39,6 +39,7 @@ function App() {
 
   const reset = () => {
     setGod(godInit)
+    difSet('normal')
   }
 
   useEffect(() => {
@@ -50,7 +51,6 @@ function App() {
     setBrownPull(new Set([]))
     setBluePull(new Set([]))
   }
-
 
   const addRandom = (shema, pull) => {
     let green = []
@@ -106,9 +106,9 @@ function App() {
   useEffect(() => {
     let newShema = setShem(god)
     if (newShema) {
-      const firstSet = createPull(dif)
-      const secondSet = createPull(dif)
-      const thirdSet = createPull(dif)
+      const firstSet = createPull(dif, helperForPull(god))
+      const secondSet = createPull(dif, helperForPull(god))
+      const thirdSet = createPull(dif, helperForPull(god))
       const newStack = {
         first: addRandom(newShema.first, firstSet),
         second: addRandom(newShema.second, secondSet),
