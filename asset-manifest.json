@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eldritch/static/css/main.02b79549.css",
-    "main.js": "/eldritch/static/js/main.afb905a0.js",
+    "main.css": "/eldritch/static/css/main.9a3460c4.css",
+    "main.js": "/eldritch/static/js/main.b8b0c4cf.js",
     "static/media/home.png": "/eldritch/static/media/home.635012cb5c1e192ab1c6.png",
     "static/media/IogSothoth.png": "/eldritch/static/media/IogSothoth.c5b7717bff973cda27be.png",
     "static/media/Azathoth.png": "/eldritch/static/media/Azathoth.e76cc60e6f2b9bb167ce.png",
@@ -60,11 +60,11 @@
     "static/media/brown2.png": "/eldritch/static/media/brown2.c44579505d0d3ccfd7c8.png",
     "static/media/green11.png": "/eldritch/static/media/green11.305fdb3b09ad909c598f.png",
     "index.html": "/eldritch/index.html",
-    "main.02b79549.css.map": "/eldritch/static/css/main.02b79549.css.map",
-    "main.afb905a0.js.map": "/eldritch/static/js/main.afb905a0.js.map"
+    "main.9a3460c4.css.map": "/eldritch/static/css/main.9a3460c4.css.map",
+    "main.b8b0c4cf.js.map": "/eldritch/static/js/main.b8b0c4cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.02b79549.css",
-    "static/js/main.afb905a0.js"
+    "static/css/main.9a3460c4.css",
+    "static/js/main.b8b0c4cf.js"
   ]
 }
